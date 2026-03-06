@@ -53,7 +53,7 @@ def load_data():
 # Training with MLflow
 # =============================================================================
 
-def train(lr=0.01, n_epochs=100):
+def train(lr=0.0001, n_epochs=100):
     X_train, X_test, y_train, y_test = load_data()
     model = BinaryClassifier(X_train.shape[1])
     criterion = nn.MSELoss()

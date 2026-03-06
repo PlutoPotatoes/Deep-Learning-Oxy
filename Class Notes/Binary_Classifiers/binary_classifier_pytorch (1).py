@@ -60,7 +60,7 @@ def load_data():
     X_train = (X_train - mean) / std
     X_test = (X_test - mean) / std
     
-    return X_train, X_test, y_train, y_test, data.feature_names
+    return X_train, X_test, y_train, y_test, data.feature_names # type: ignore
 
 
 # =============================================================================
@@ -69,6 +69,14 @@ def load_data():
 
 def train(model, X_train, y_train, lr=0.01, n_epochs=100):
     """Train the model using SGD."""
+
+    '''
+    differences:
+      criterion loss using MSELoss()
+      uses optimizer to update gradient
+      
+
+    '''
     
     criterion = nn.MSELoss()
     optimizer = optim.SGD(model.parameters(), lr=lr)
